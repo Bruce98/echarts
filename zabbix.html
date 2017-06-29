@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Graph</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="css/jcolor.min.css">
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jcolor.min.js"></script>
+
+</head>
+<style type="text/css">
+a:hover{text-decoration:none;}
+    .groupTop{margin-top:20px;}
+    .link-action{width:20px;height: 20px; border:1px solid #ddd;}
+    .current{background-color: #0786ed;color:#fff;}
+</style>
+<body>
+    <ul id="myTab" class="nav nav-tabs">
+        <li class="active">
+            <a href="#picture" data-toggle="tab" id='patterning'>图形</a>
+        </li>
+        <li><a href="#achieve" data-toggle="tab" id="preview">预览</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in active" id="picture">
+        <form role="form" class="form-inline">
+            <div class="row form-group col-xs-12 groupTop ">
+                <label >名称</label>
+                <input type="text" id="titleName" class="form-control">
+            </div>
+            <div class="form-group col-xs-12 groupTop">
+                <label >宽</label>
+                <input type="text" id="patternWidth" class="form-control">
+            </div>
+            <div class="form-group col-xs-12 groupTop">
+                <label >高</label>
+                <input type="text" id="patternHeight" class="form-control">
+            </div>
+            <div class="form-group col-xs-12 groupTop">
+                <label >图形类别</label>
+                <select name="graph_type" id="graph_type" class="form-control">
+                    <!--<option value="bar" selected>柱状图</option>-->
+                    <option value="pie">饼形图</option>
+                    <option value="line">折线图</option>
+                </select>
+            </div>
+            <div class="form-group col-xs-12 groupTop">
+                <select name="itemid" id="itemid" class="form-control">
+                    <option value="46222" selected>46222</option>
+                    <option value="46223">46223</option>
+                    <option value="46224">46224</option>
+                    <option value="46233">46233</option>
+                </select>
+                <button type="button" id="add">添加</button>
+            </div>
+            </form>
+            <div class="form-group col-xs-12 groupTop">
+                <label >监控项</label>
+                <div style="border-color: grey; border: 1px solid;width: 820px; height: auto;margin-top: 20px; margin-right: 380px;float: right;">
+                    <table class="table" id="table">
+                        <thead>
+                        <tr>
+                            <th>itemid</th>
+                            <th>纵轴Y侧</th>
+                            <th>颜色</th>
+                            <th>动作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <!--<tr >-->
+                                <!--<td class="la"></td>-->
+                            <!--</tr>-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="zoom" style="display: none;padding:15px; cursor:pointer">
+            <div class="timeBox" style="float:left">
+                <span class="text" style="float:left">缩放:</span>
+                <span class="links" style="float:left">
+                    <a class="link-action" data-zoom="300">5m</a>
+                    <a class="link-action" data-zoom="900">15m</a>
+                    <a class="link-action" data-zoom="1800">30m</a>
+                    <a class="link-action" data-zoom="3600">1h</a>
+                    <a class="link-action "  data-zoom="7200">2h</a>
+                    <a class="link-action" data-zoom="10800">3h</a>
+                    <a class="link-action" data-zoom="21600">6h</a>
+                    <a class="link-action" data-zoom="43200">12h</a>
+                    <a class="link-action current" data-zoom="86400">1d</a>
+                </span>
+            </div>
+            <div class="timeline" style="float:right">
+                <span class="beforeTime"></span>
+                <span>-</span>
+                <span class="nowTime"></span>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div class="tab-pane fade" id="achieve" style="margin: auto; margin-top:100px;border: 1px solid #ddd;">
+     
+        </div>
+    </div>
+  
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="js/deal.js"></script>
+</body>
+</html>
